@@ -54,6 +54,20 @@ class _HomepageState extends State<Homepage> {
               )
             ],
           ),
+          SizedBox(
+            width: screenWidth,
+            child: const Padding(
+              padding: EdgeInsets.fromLTRB(30, 30, 0, 30),
+              child: Text(
+                'Hey, Melaku 👋',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                    color: Color(0xffCB9658),
+                    fontSize: 30,
+                    fontWeight: FontWeight.w900),
+              ),
+            ),
+          )
         ],
       ),
     );
