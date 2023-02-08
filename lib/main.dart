@@ -133,16 +133,13 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                   borderRadius:
                       BorderRadius.only(bottomRight: Radius.circular(117)),
                   image: DecorationImage(
-                      image: NetworkImage(
-                          'https://eyosiyasmekbib.github.io/image/hero.png'),
-                      fit: BoxFit.cover),
+                      image: AssetImage('assets/hero.png'), fit: BoxFit.cover),
                 ),
                 child: const Padding(
                     padding: EdgeInsets.fromLTRB(30, 60, 100, 50),
                     child: Image(
                       width: 100,
-                      image: NetworkImage(
-                          'https://eyosiyasmekbib.github.io/image/logo.png'),
+                      image: AssetImage('assets/logo.png'),
                     )),
               )
             ],
