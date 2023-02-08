@@ -58,7 +58,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
           SizedBox(
             width: screenWidth,
             child: const Padding(
-              padding: EdgeInsets.fromLTRB(30, 30, 0, 30),
+              padding: EdgeInsets.fromLTRB(30, 30, 0, 10),
               child: Text(
                 'Hey, Melaku 👋',
                 textAlign: TextAlign.start,
@@ -70,7 +70,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 30, bottom: 30, right: 30),
+            padding: EdgeInsets.only(left: 30, right: 30),
             child: Container(
               child: Align(
                 alignment: Alignment.centerLeft,
@@ -92,18 +92,85 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
             ),
           ),
           Container(
-            height: 300,
             width: screenWidth,
+            height: 460,
             child: Padding(
-              padding: const EdgeInsets.only(left: 30),
+              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 10),
               child: TabBarView(controller: _tabController, children: [
-                Text('Catagory1'),
+                ListView(
+                  children: [
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                    MenuItem(),
+                  ],
+                ),
                 Text("Category2"),
                 Text("category3")
               ]),
             ),
+          ),
+          Text(
+            'All Items Listed are VAT Inclusive',
+            style: TextStyle(
+                color: Color.fromARGB(255, 116, 9, 9),
+                fontWeight: FontWeight.bold),
           )
         ],
+      ),
+    );
+  }
+}
+
+class MenuItem extends StatelessWidget {
+  const MenuItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // decoration: BoxDecoration(color: Colors.green),
+      child: Container(
+        margin: EdgeInsets.only(bottom: 15),
+        padding: EdgeInsets.fromLTRB(20, 6, 20, 6),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Color(0xffffffff),
+            image: DecorationImage(
+                image: NetworkImage(
+                    'https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg'),
+                fit: BoxFit.contain,
+                alignment: Alignment.centerRight)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(
+                'Pizza',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              ),
+              Text(
+                'Somejth, tsljdfa, sfjlks',
+                style: TextStyle(fontSize: 10),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '\$324',
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold),
+              )
+            ])
+          ],
+        ),
       ),
     );
   }
